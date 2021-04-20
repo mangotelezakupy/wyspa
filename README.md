@@ -1,15 +1,9 @@
-<p align="center"><img src="./app/assets/images/lapis.png" width="150px" height="150px" alt="aventium softworks"></p>
+<p align="center"><img src="./app/assets/images/lapis.png" width="150px" height="150px" alt="xdxd"></p>
 
-<h1 align="center">MLauncher</h1>
+<h1 align="center">Wyspa Launcher</h1>
 
-<em><h5 align="center">(formerly Electron Launcher)</h5></em>
-
-[<p align="center"><img src="https://img.shields.io/appveyor/build/dommilosz/MLauncher?style=for-the-badge" alt="appveyor">](https://travis-ci.org/dommilosz/Mlauncher-node) [<img src="https://img.shields.io/github/downloads/dommilosz/MLauncher/total?style=for-the-badge" alt="downloads">](https://github.com/dommilosz/Mlauncher-node/releases) <img src="https://img.shields.io/badge/Platform-windows%20|%20linux-green?style=for-the-badge" alt="platforms"></p>
-
-<p align="center">Join modded servers without worrying about installing Java, Forge, or other mods. We'll handle that for you.</p>
-
-![Screenshot 1](https://i.imgur.com/6o7SmH6.png)
-![Screenshot 2](https://i.imgur.com/x3B34n1.png)
+![Screenshot 1](https://media.discordapp.net/attachments/824034997039005736/834174198028566599/unknown.png)
+![Screenshot 2](https://media.discordapp.net/attachments/824034997039005736/834174307927851008/unknown.png)
 
 ## Features
 
@@ -17,7 +11,6 @@
   * Add multiple accounts and easily switch between them.
   * Credentials are never stored and transmitted directly to Mojang.
   * You can use Cracked and MCLeaks accounts
-  * To Use MCLeaks type in password field MC:LEAKS and in username your token
 * 📂 Efficient asset management.
   * Receive client updates as soon as we release them.
   * Files are validated before launch. Corrupt or incorrect files will be redownloaded.
@@ -30,50 +23,18 @@
   * Switch between server configurations with ease.
   * View the player count of the selected server.
 * Automatic updates. That's right, the launcher updates itself.
-*  View the status of Mojang's services.
-
-This is not an exhaustive list. Download and install the launcher to gauge all it can do!
-
-#### Need Help? [Check the wiki.][wiki]
+*  View the status of Mojang's and Wyspa Retardów services.
 
 #### Like the project? Leave a ⭐ star on the repository!
 
-## Downloads
-
-You can download from [GitHub Releases](https://github.com/dommilosz/Mlauncher-node/releases)
-
-#### Latest Release
-
-[![](https://img.shields.io/github/release/dommilosz/Mlauncher-node.svg?style=flat-square)](https://github.com/dommilosz/Mlauncher-node/releases/latest)
-
-#### Latest Pre-Release
-[![](https://img.shields.io/github/release/dommilosz/Mlauncher-node/all.svg?style=flat-square)](https://github.com/dommilosz/Mlauncher-node/releases)
 
 **Supported Platforms**
 
-If you download from the [Releases](https://github.com/dommilosz/Mlauncher-node/releases) tab, select the installer for your system.
-
 | Platform | File |
 | -------- | ---- |
-| Windows x64 | `mlauncher-setup-VERSION.exe` |
-| Linux x64 | `mlauncher-VERSION-x86_64.AppImage` |
-| macOS | `mlauncher-VERSION.dmg` |
-
-## Console
-
-To open the console, use the following keybind.
-
-```console
-ctrl + shift + i
-```
-
-Ensure that you have the console tab selected. Do not paste anything into the console unless you are 100% sure of what it will do. Pasting the wrong thing can expose sensitive information.
-
-#### Export Output to a File
-
-If you want to export the console output, simply right click anywhere on the console and click **Save as..**
-
-![console example](https://i.imgur.com/T5e73jP.png)
+| Windows x64 | `wyspaclient-setup-VERSION.exe` |
+| Linux x64 | `wyspaclient-VERSION-x86_64.AppImage` |
+| macOS | `wyspaclient-VERSION.dmg` |
 
 
 ## Development
@@ -86,17 +47,7 @@ If you want to export the console output, simply right click anywhere on the con
 
 ---
 
-**Clone and Install Dependencies**
-
-```console
-> git clone https://github.com/dommilosz/Mlauncher-node.git
-> cd MLauncher
-> npm install
-```
-
----
-
-**Launch Application**
+**Launch**
 
 ```console
 > npm start
@@ -104,111 +55,14 @@ If you want to export the console output, simply right click anywhere on the con
 
 ---
 
-**Build Installers**
-
-To build for your current platform.
+**Installer**
 
 ```console
 > npm run dist
 ```
 
-Build for a specific platform.
-
-| Platform    | Command              |
-| ----------- | -------------------- |
-| Windows x64 | `npm run dist:win`   |
-| macOS       | `npm run dist:mac`   |
-| Linux x64   | `npm run dist:linux` |
-
-Builds for macOS may not work on Windows/Linux and vice-versa.
-
 ---
 
 ### Visual Studio Code
 
-All development of the launcher should be done using [Visual Studio Code][vscode].
-
-Paste the following into `.vscode/launch.json`
-
-```JSON
-{
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "name": "Debug Main Process",
-      "type": "node",
-      "request": "launch",
-      "cwd": "${workspaceRoot}",
-      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
-      "windows": {
-        "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
-      },
-      "args": ["."],
-      "console": "integratedTerminal",
-      "protocol": "inspector"
-    },
-    {
-      "name": "Debug Renderer Process",
-      "type": "chrome",
-      "request": "launch",
-      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
-      "windows": {
-        "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
-      },
-      "runtimeArgs": [
-        "${workspaceRoot}/.",
-        "--remote-debugging-port=9222"
-      ],
-      "webRoot": "${workspaceRoot}"
-    }
-  ]
-}
-```
-
-This adds two debug configurations.
-
-#### Debug Main Process
-
-This allows you to debug Electron's [main process][mainprocess]. You can debug scripts in the [renderer process][rendererprocess] by opening the DevTools Window.
-
-#### Debug Renderer Process
-
-This allows you to debug Electron's [renderer process][rendererprocess]. This requires you to install the [Debugger for Chrome][chromedebugger] extension.
-
-Note that you **cannot** open the DevTools window while using this debug configuration. Chromium only allows one debugger, opening another will crash the program.
-
----
-
-### Note on Third-Party Usage
-
-You may use this software in your own project so long as the following conditions are met.
-
-* Credit is expressly given to the original authors (Daniel Scalzi).
-  * Include a link to the original source on the launcher's About page.
-  * Credit the authors and provide a link to the original source in any publications or download pages.
-* The source code remain **public** as a fork of this repository.
-
-We reserve the right to update these conditions at any time, please check back periodically.
-
----
-
-## Resources
-
-* [Wiki][wiki]
-
-The best way to contact the developers is on Discord.
-
-<iframe src="https://discord.com/widget?id=810583402088628225&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-
----
-
-### See you ingame.
-
-
-[nodejs]: https://nodejs.org/en/ 'Node.js'
-[vscode]: https://code.visualstudio.com/ 'Visual Studio Code'
-[mainprocess]: https://electronjs.org/docs/tutorial/application-architecture#main-and-renderer-processes 'Main Process'
-[rendererprocess]: https://electronjs.org/docs/tutorial/application-architecture#main-and-renderer-processes 'Renderer Process'
-[chromedebugger]: https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome 'Debugger for Chrome'
-[discord]: https://discord.gg/zNWUXdt 'Discord'
-[wiki]: https://github.com/dommilosz/Mlauncher-node/wiki 'wiki'
+All work on the launcher was done using [Visual Studio Code].
