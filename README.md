@@ -1,5 +1,3 @@
-<p align="center"><img src="./app/assets/images/lapis.png" width="150px" height="150px" alt="xdxd"></p>
-
 <h1 align="center">Wyspa Launcher</h1>
 
 ![Screenshot 1](https://media.discordapp.net/attachments/824034997039005736/834174198028566599/unknown.png)
