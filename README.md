@@ -1,4 +1,4 @@
-<h1 align="center">Wyspa Launcher</h1>
+<h1 align="center">Wyspa Retardów 6</h1>
 
 ![Screenshot 1](https://media.discordapp.net/attachments/824034997039005736/833689161218916392/1.png?width=1200&height=676)
 ![Screenshot 2](https://media.discordapp.net/attachments/824034997039005736/833689162300522506/2.png?width=1200&height=676)
