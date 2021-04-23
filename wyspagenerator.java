@@ -1,21 +1,21 @@
 package com.dfsek.wyspa.world;
 
-import com.dfsek.wyspa.api.wyspaPlugin;
-import com.dfsek.wyspa.api.event.events.world.wyspaWorldLoadEvent;
-import com.dfsek.wyspa.api.math.vector.Location;
-import com.dfsek.wyspa.api.math.vector.Vector3;
-import com.dfsek.wyspa.api.platform.block.BlockData;
-import com.dfsek.wyspa.api.platform.world.World;
-import com.dfsek.wyspa.api.platform.world.generator.GeneratorWrapper;
-import com.dfsek.wyspa.api.world.biome.UserDefinedBiome;
-import com.dfsek.wyspa.api.world.biome.provider.BiomeProvider;
-import com.dfsek.wyspa.api.world.generation.wyspaChunkGenerator;
-import com.dfsek.wyspa.api.world.palette.Palette;
-import com.dfsek.wyspa.config.pack.ConfigPack;
-import com.dfsek.wyspa.config.pack.WorldConfig;
-import com.dfsek.wyspa.profiler.WorldProfiler;
-import com.dfsek.wyspa.world.generation.math.samplers.Sampler;
-import net.jafama.FastMath;
+import com.wyspa.api.wyspaPlugin;
+import com.wyspa.api.event.events.world.wyspaWorldLoadEvent;
+import com.wyspa.api.math.vector.Location;
+import com.wyspa.api.math.vector.Vector3;
+import com.wyspa.api.platform.block.BlockData;
+import com.wyspa.api.platform.world.World;
+import com.wyspa.api.platform.world.generator.GeneratorWrapper;
+import com.wyspa.api.world.biome.UserDefinedBiome;
+import com.wyspa.api.world.biome.provider.BiomeProvider;
+import com.wyspa.api.world.generation.wyspaChunkGenerator;
+import com.wyspa.api.world.palette.Palette;
+import com.wyspa.config.pack.ConfigPack;
+import com.wyspa.config.pack.WorldConfig;
+import com.wyspa.profiler.WorldProfiler;
+import com.wyspa.world.generation.math.samplers.Sampler;
+import net.FastMath;
 
 public class wyspaWorld {
     private final BiomeProvider provider;
