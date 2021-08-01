@@ -1,4 +1,4 @@
-package com.dfsek.wyspa.world;
+package com.papaya.wyspa.world;
 
 import com.wyspa.api.wyspaPlugin;
 import com.wyspa.api.event.events.world.wyspaWorldLoadEvent;
