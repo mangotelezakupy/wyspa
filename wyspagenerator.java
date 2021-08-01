@@ -91,4 +91,72 @@ public class wyspaWorld {
     public BlockData getUngeneratedBlock(Vector3 v) {
         return getUngeneratedBlock(v.getBlockX(), v.getBlockY(), v.getBlockZ());
     }
+@Override
+    public void getNoise(BiomeGenerator biomeGenerator, double[] buffer, int x, int z) {
+        final double d0 = settings.getCoordinateScale();
+        final double d2 = settings.getHeightScale();
+        final double d3 = settings.getCoordinateScale() / settings.getMainNoiseScaleX();
+        final double d4 = settings.getHeightScale() / settings.getMainNoiseScaleY();
+        final double d5 = settings.getCoordinateScale() / settings.getMainNoiseScaleZ();
+
+        this.a(biomeGenerator, buffer, x, z, d0, d2, d3, d4, d5, 3, -10);
+
+    }
+
+    @Override
+    public TerrainSettings getTerrainSettings() {
+        TerrainSettings settings = new TerrainSettings();
+        settings.stoneBlock = this.settings.getStoneBlock();
+        settings.waterBlock = this.settings.getWaterBlock();
+        settings.seaLevel = this.settings.getSeaLevel();
+        return settings;
+    }
+    
+        private double a(double d0, double d1, int i) {
+        final double d2 = this.settings.getBaseSize();
+                double d3 = (i - (d2 + d0 * d2 / 8.0 * 4.0)) * this.settings.getStretchY() * 128.0 / 256.0 / d1;
+      
+             if (d3 < 0.0) {
+                  d3 *= 4.0;
+           
+                   }
+                      return d3;
+    }
+
+    private double c(final int i, final int j) {
+            double d0 = this.depthNoise.a(i * this.settings.getDepthNoiseScaleX(), 10.0,
+                    j * this.settings.getDepthNoiseScaleZ(), 1.0, 0.0, true) / 8000.0;
+
+            if (d0 < 0.0) {
+                d0 = -d0 * 0.3;
+
+            }
+            d0 = d0 * 3.0 - 2.0;
+            if (d0 < 0.0) {
+                d0 /= 28.0;
+            } else {
+                if (d0 > 1.0) {
+                    d0 = 1.0;
+
+                }
+                d0 /= 40.0;
+
+            }
+            return d0;
+
+        }
+
+    protected double g() {
+        return this.i() - 4;
+    }
+
+    protected double h() {
+        return 0.0;
+
+    }
+
+    private int i() {
+        return 33;
+    }
 }
+// Wyspa Retardów | Generator Świata 01.08
